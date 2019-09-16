@@ -126,9 +126,11 @@ Copy your `part1.py` file into `part2.py` file and make your changes in the new 
 
     (You figure you can just add this field to each dictionary inside the loop.)
 
-2. Change everyone's `performance_review` to `excellent`, unless it's your boss Bill or someone with the `job_title` of `Consultant`. In that case, make their `performance_review` value `poor`. (Hehehe)
+1. Change everyone's `performance_review` to `excellent`, unless it's your boss Bill or someone with the `job_title` of `Consultant`. In that case, make their `performance_review` value `poor`. (Hehehe)
 
-3. Enjoy the rest of your (fictional) Saturday!
+1. Re-generate `tps_report.csv` and make sure your new program does the job.
+
+1. Enjoy the rest of your (fictional) Saturday!
 
 ---
 
