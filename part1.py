@@ -1,5 +1,7 @@
 import csv
 
+# Employees is a list of objects.
+# The keys in these objects will be the header fields of your spreadsheet.
 employees = [
     {
         'first_name': 'Bill',
@@ -50,12 +52,4 @@ employees = [
         'hire_date': 1999,
         'performance_review': 'excellent'
     }
-]
-
-# Report is a list of objects.
-# The keys in these objects will be the header fields of your spreadsheet.
-report = [
-    { ... },
-    { ... },
-    { ... }
 ]

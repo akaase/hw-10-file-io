@@ -6,7 +6,6 @@ In this assignment, you'll practice:
 * Reading documentation
 * Scripting
 * File I/O
-* List comprehension
 * Using dictionaries
 
 ## Deliverables and Submitting
@@ -38,18 +37,19 @@ import csv
 with open('names.csv', 'w', newline='') as csvfile:
 
     # These are the header row values at the top.
+    # It should be a List!
     fieldnames = ['first_name', 'last_name']
 
-    # This opens the `DictWriter`.
-    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    # This opens the `DictWriter`. Notice that we pass in the list of fieldnames.
+    writer = csv.DictWriter(csvfile, fieldnames)
 
     # Write out the header row (this only needs to be done once!).
     writer.writeheader()
 
     # Write as many rows as you want!
-    writer.writerow({'first_name': 'Baked', 'last_name': 'Beans'})
-    writer.writerow({'first_name': 'Lovely', 'last_name': 'Spam'})
-    writer.writerow({'first_name': 'Wonderful', 'last_name': 'Spam'})
+    writer.writerow({ 'first_name': 'Baked', 'last_name': 'Beans' })
+    writer.writerow({ 'first_name': 'Lovely', 'last_name': 'Spam' })
+    writer.writerow({ 'first_name': 'Wonderful', 'last_name': 'Spam' })
 ```
 
 ### Output of `DictWriter` Example
@@ -81,7 +81,8 @@ You have a list of dictionaries called `employees`, which contains information a
 
 You must open a new file called `tps_report.csv` and make a loop to write out every employee in the `employees` to `tps_report.csv`.
 
-**Hint:** Instead of writing `writerow` many times in a row, try looping through the `employees` list.
+**Hint 1:** Think about where you can retrieve the report field names from, without having to write them all out.
+**Hint 2:** Instead of writing `writer.writerow` many times (as in the example earlier), try looping through the `employees` list.
 
 ### Starter Code
 
@@ -123,14 +124,16 @@ You notice that the performance review of you and your friends are pretty bad...
 Copy your `part1.py` file into `part2.py` file and make your changes in the new file.
 
 1. Add a field called `review_finished` to each employee. The value for every row should be `yes`.
+  * **Hint 1**: You figure you can just add this field to each dictionary inside the loop
+  * **Hint 2**: Don't forget to update the headers in the report!
 
-    (You figure you can just add this field to each dictionary inside the loop.)
+1. Change everyone's `performance_review` to `excellent`... Unless it's your boss Bill Lumbergh or someone with the `job_title` of `Consultant`. In that case, make their `performance_review` value `poor`. (Hehehe)
 
-1. Change everyone's `performance_review` to `excellent`, unless it's your boss Bill or someone with the `job_title` of `Consultant`. In that case, make their `performance_review` value `poor`. (Hehehe)
-
-1. Re-generate `tps_report.csv` and make sure your new program does the job.
+1. Re-generate the TPS Report and make sure your new program does the job.
 
 1. Enjoy the rest of your (fictional) Saturday!
+
+**Hint**: Don't forget that you can always write a function if your code starts getting too long!
 
 ---
 
