@@ -54,12 +54,21 @@ employees = [
     }
 ]
 
+def modify_employee_review(e):
+    e['review_finished'] = 'yes'
+    if ((e['first_name'] == 'Bill' and e['last_name'] == 'Lumbergh') or e['job_title'] == 'Consultant'):
+        e['performance_review'] = 'poor'
+    else:
+        e['performance_review'] = 'excellent'
+
 with open('tps_report.csv', 'w', newline='') as csvfile:
 
     fieldnames = list(employees[0].keys())
-    
+    fieldnames.append('review_finished')
+
     writer = csv.DictWriter(csvfile, fieldnames)
     writer.writeheader()
 
     for e in employees:
+        modify_employee_review(e)
         writer.writerow(e)
