@@ -26,7 +26,7 @@ You know of a Python module called [`csv`](https://docs.python.org/3/library/csv
 
 You can check out the [`csv` docs](https://docs.python.org/3/library/csv.html) for examples of how this module works.
 
-We'll be using the [`DictWriter` method](https://docs.python.org/3/library/csv.html#csv.DictWriter), which maps a dictionary to output rows.
+We'll be using [`DictWriter`](https://docs.python.org/3/library/csv.html#csv.DictWriter), which can output dictionaries to rows in a CSV file.
 
 ## `DictWriter` Example
 
@@ -117,7 +117,7 @@ Or, if you're viewing it in a spreadsheet program:
 
 # Part 2: Have You Seen My Stapler?
 
-Now we have generated a TPS report, but it isn't finished — there are still a couple of things left to do!
+Now we have generated a TPS report... but it isn't finished — there are still a couple of things left to do!
 
 You notice that the performance review of you and your friends are pretty bad... so let's change your performance reviews in the system. :smiling_imp:
 
