@@ -18,11 +18,11 @@ The usual!
 
 Your boss, Bill, asks you to come in on Saturday to finish your TPS report.
 
-You promise to finish the report, but as Bill walks away you smile knowing you have a trick up your sleeve: scripting!
+You promise to finish the report, but as Bill walks away, you smile knowing you have a trick up your sleeve: scripting!
 
 You plan on quickly writing up a bit of code to finish the report, all without spending a minute of your Saturday!
 
-You know of a Python module called [`csv`](https://docs.python.org/3/library/csv.html) that can be used to read and write `csv` files. CSV stands for "comma-separated values" and is a file type commonly associated with spreadsheets.
+You know of a Python module called [`csv`](https://docs.python.org/3/library/csv.html) that can be used to read and write `csv` files. CSV stands for "Comma-Separated Values" and is a file type commonly used for spreadsheets.
 
 You can check out the [`csv` docs](https://docs.python.org/3/library/csv.html) for examples of how this module works.
 
@@ -33,17 +33,17 @@ We'll be using [`DictWriter`](https://docs.python.org/3/library/csv.html#csv.Dic
 ```python
 import csv
 
-# This line opens or creates a `names.csv` file.
+# This line opens or creates a `names.csv` file
 with open('names.csv', 'w', newline='') as csvfile:
 
-    # These are the header row values at the top.
+    # These are the header row values at the top
     # It should be a List!
     fieldnames = ['first_name', 'last_name']
 
-    # This opens the `DictWriter`. Notice that we pass in the list of fieldnames.
+    # This opens the `DictWriter`. Notice that we pass in the list of fieldnames
     writer = csv.DictWriter(csvfile, fieldnames)
 
-    # Write out the header row (this only needs to be done once!).
+    # Write out the header row (this only needs to be done once!)
     writer.writeheader()
 
     # Write as many rows as you want!
@@ -79,16 +79,18 @@ Now that you have a good idea how to wrangle a `csv` file, let's think about wha
 
 You have a list of dictionaries called `employees`, which contains information about each employee including `first_name`, `last_name`, `hire_date`, `job_title`, and `performance_review`.
 
-You must open a new file called `tps_report.csv` and make a loop to write out every employee in the `employees` to `tps_report.csv`.
+Open a new file called `tps_report.csv`, and write a loop to write out every employee in the `employees` dictionary to `tps_report.csv`.
 
-**Hint 1:** Think about where you can retrieve the report field names from, without having to write them all out.
-**Hint 2:** Instead of writing `writer.writerow` many times (as in the example earlier), try looping through the `employees` list.
+* **Hint 1:** Think about where you can retrieve the report field names from, without having to write them all out
+* **Hint 2:** Instead of writing `writer.writerow` many times (as in the example earlier), try looping through the `employees` list
 
 ### Starter Code
 
 You can start with the starter code inside the file called `part1.py`.
 
 ### Expected Output
+
+After you write and run your program, the `tps_report.csv` file should contain:
 
 ```
 first_name,last_name,job_title,hire_date,performance_review
@@ -101,7 +103,7 @@ Bob,Porter,Consultant,1999,excellent
 Bob,Slydell,Consultant,1999,excellent
 ```
 
-Or, if you're viewing it in a spreadsheet program:
+Or, if you're viewing it in a spreadsheet program, it should look something like:
 
 | first_name | last_name | job_title | hire_date | performance_review |
 | --- | --- | --- | --- | --- |
@@ -117,20 +119,17 @@ Or, if you're viewing it in a spreadsheet program:
 
 # Part 2: Have You Seen My Stapler?
 
-Now we have generated a TPS report... but it isn't finished — there are still a couple of things left to do!
+Now we have generated a TPS report... but it isn't finished. There are still a couple of things left to do!
 
 You notice that the performance review of you and your friends are pretty bad... so let's change your performance reviews in the system. :smiling_imp:
 
 Copy your `part1.py` file into `part2.py` file and make your changes in the new file.
 
 1. Add a field called `review_finished` to each employee. The value for every row should be `yes`.
-  * **Hint 1**: You figure you can just add this field to each dictionary inside the loop
-  * **Hint 2**: Don't forget to update the headers in the report!
-
+   * **Hint 1**: You figure you can just add this field to each dictionary inside the loop
+   * **Hint 2**: Don't forget to update the headers in the report!
 1. Change everyone's `performance_review` to `excellent`... Unless it's your boss Bill Lumbergh or someone with the `job_title` of `Consultant`. In that case, make their `performance_review` value `poor`. (Hehehe)
-
 1. Re-generate the TPS Report and make sure your new program does the job.
-
 1. Enjoy the rest of your (fictional) Saturday!
 
 **Hint**: Don't forget that you can always write a function if your code starts getting too long!
