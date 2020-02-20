@@ -117,7 +117,7 @@ Or, if you're viewing it in a spreadsheet program, it should look something like
 
 ---
 
-# Part 2: Have You Seen My Stapler?
+# (STRETCH) Part 2: Have You Seen My Stapler?
 
 Now we have generated a TPS report... but it isn't finished. There are still a couple of things left to do!
 
